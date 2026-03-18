@@ -65,16 +65,22 @@ export function Navbar() {
     e.preventDefault()
     const targetId = href.substring(1)
     const element = document.getElementById(targetId)
+    
+    // Close mobile menu first
+    setIsMobileMenuOpen(false)
+
     if (element) {
       const headerOffset = 80 // Navbar height + some padding
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.scrollY - headerOffset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      })
-      setIsMobileMenuOpen(false)
+      // Delay scroll purely to let React state unmount without interrupting native mobile smooth scroll
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        })
+      }, 100)
     }
   }
 

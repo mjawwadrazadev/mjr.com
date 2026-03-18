@@ -44,7 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+        <div className="overflow-x-hidden min-h-screen">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>
