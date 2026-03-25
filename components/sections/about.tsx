@@ -1,6 +1,6 @@
 "use client"
 
-import { Code2, Layers, Rocket, Shield } from "lucide-react"
+import { Code2, Layers, Rocket, Shield, LayoutTemplate, Database, BrainCircuit, Cloud } from "lucide-react"
 import {
   FadeIn,
   StaggerContainer,
@@ -33,6 +33,18 @@ const features = [
     description:
       "Implementing robust authentication, authorization, and data protection strategies.",
   },
+  {
+    icon: BrainCircuit,
+    title: "AI Integrations",
+    description:
+      "Integrating OpenAI and AI agents to build smart, automated, and context-aware web features.",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & Deployment",
+    description:
+      "Deploying scalable web applications seamlessly on modern cloud architectures.",
+  },
 ]
 
 const frontendTech = [
@@ -53,6 +65,7 @@ const backendTech = [
   "RESTful APIs",
   "JWT Auth",
   "OAuth",
+  "OpenAI API",
 ]
 
 export function AboutSection() {
@@ -61,13 +74,17 @@ export function AboutSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn className="text-center mb-12 sm:mb-16">
-          <span className="text-primary text-xs sm:text-sm font-medium tracking-wider uppercase">
+          <span className="block text-primary text-xs sm:text-sm font-medium tracking-wider uppercase">
             About Me
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4 text-balance">
-            Passionate MERN Stack Developer
-          </h2>
-          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full" />
+          <div className="inline-block mt-2 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
+              Passionate MERN Stack Developer
+            </h2>
+            <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
+              <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent animate-beam" />
+            </div>
+          </div>
         </FadeIn>
 
         {/* About Content */}
@@ -110,7 +127,7 @@ export function AboutSection() {
           <FadeIn direction="right" className="space-y-6 sm:space-y-8">
             <div>
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="w-6 sm:w-8 h-0.5 bg-primary" />
+                <LayoutTemplate className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 Frontend Technologies
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -126,7 +143,7 @@ export function AboutSection() {
             </div>
             <div>
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="w-6 sm:w-8 h-0.5 bg-primary" />
+                <Database className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 Backend Technologies
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -144,7 +161,7 @@ export function AboutSection() {
         </div>
 
         {/* Features Grid */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature) => (
             <StaggerItem key={feature.title}>
               <ScaleOnHover className="h-full">

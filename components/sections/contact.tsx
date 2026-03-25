@@ -68,13 +68,17 @@ export function ContactSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn className="text-center mb-12 sm:mb-16">
-          <span className="text-primary text-xs sm:text-sm font-medium tracking-wider uppercase">
+          <span className="block text-primary text-xs sm:text-sm font-medium tracking-wider uppercase">
             Contact
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4 text-balance">
-            {"Let's Work Together"}
-          </h2>
-          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
+          <div className="inline-block mt-2 mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
+              {"Let's Work Together"}
+            </h2>
+            <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
+              <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent animate-beam" />
+            </div>
+          </div>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
             Have a project in mind or want to collaborate? Feel free to reach
             out. I&apos;m always open to discussing new opportunities.
@@ -83,15 +87,15 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           {/* Contact Info */}
-          <FadeIn direction="left" className="space-y-6 sm:space-y-8">
-            <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6">
+          <FadeIn direction="left" className="h-full">
+            <div className="h-full flex flex-col">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6 shrink-0">
                 Get in Touch
               </h3>
-              <StaggerContainer className="space-y-3 sm:space-y-4">
+              <StaggerContainer className="flex-1 flex flex-col justify-between space-y-0 gap-3 sm:gap-4">
                 {contactInfo.map((item) => (
-                  <StaggerItem key={item.label}>
-                    <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
+                  <StaggerItem key={item.label} className="flex-1">
+                    <div className="h-full flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                         <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                       </div>
@@ -131,87 +135,95 @@ export function ContactSection() {
           </FadeIn>
 
           {/* Contact Form */}
-          <FadeIn direction="right">
-            <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-card border border-border">
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <FadeIn direction="right" className="h-full">
+            <div className="h-full flex flex-col">
+              <h3 
+                className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 invisible shrink-0" 
+                aria-hidden="true"
+              >
+                Send a Message
+              </h3>
+              <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-card border border-border">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <Label htmlFor="name" className="text-sm">
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="h-10 sm:h-11 text-sm sm:text-base"
+                      />
+                    </div>
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <Label htmlFor="email" className="text-sm">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="your@email.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="h-10 sm:h-11 text-sm sm:text-base"
+                      />
+                    </div>
+                  </div>
                   <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="name" className="text-sm">
-                      Name
+                    <Label htmlFor="subject" className="text-sm">
+                      Subject
                     </Label>
                     <Input
-                      id="name"
-                      name="name"
-                      placeholder="Your name"
-                      value={formData.name}
+                      id="subject"
+                      name="subject"
+                      placeholder="What's this about?"
+                      value={formData.subject}
                       onChange={handleChange}
                       required
                       className="h-10 sm:h-11 text-sm sm:text-base"
                     />
                   </div>
                   <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="email" className="text-sm">
-                      Email
+                    <Label htmlFor="message" className="text-sm">
+                      Message
                     </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={formData.email}
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell me about your project..."
+                      rows={4}
+                      value={formData.message}
                       onChange={handleChange}
                       required
-                      className="h-10 sm:h-11 text-sm sm:text-base"
+                      className="text-sm sm:text-base resize-none"
                     />
                   </div>
-                </div>
-                <div className="space-y-1.5 sm:space-y-2">
-                  <Label htmlFor="subject" className="text-sm">
-                    Subject
-                  </Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    placeholder="What's this about?"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="h-10 sm:h-11 text-sm sm:text-base"
-                  />
-                </div>
-                <div className="space-y-1.5 sm:space-y-2">
-                  <Label htmlFor="message" className="text-sm">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell me about your project..."
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="text-sm sm:text-base resize-none"
-                  />
-                </div>
-                {shouldReduceMotion ? (
-                  <Button type="submit" size="lg" className="w-full group">
-                    Send Message
-                    <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                ) : (
-                  <MotionButton
-                    type="submit"
-                    size="lg"
-                    className="w-full group"
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Send Message
-                    <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </MotionButton>
-                )}
-              </form>
+                  {shouldReduceMotion ? (
+                    <Button type="submit" size="lg" className="w-full group">
+                      Send Message
+                      <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  ) : (
+                    <MotionButton
+                      type="submit"
+                      size="lg"
+                      className="w-full group"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Send Message
+                      <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </MotionButton>
+                  )}
+                </form>
+              </div>
             </div>
           </FadeIn>
         </div>

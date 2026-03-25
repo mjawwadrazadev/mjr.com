@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import Image from "next/image"
+import { Typewriter } from "@/components/typewriter"
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion()
@@ -113,9 +114,19 @@ export function HeroSection() {
               animate="visible"
               variants={fadeUpVariants}
             >
-              <span className="text-balance block">Building Scalable Full-Stack</span>
-              <span className="text-primary block mt-1 sm:mt-2">Web Applications</span>
-              <span className="text-balance block mt-1 sm:mt-2">with MERN</span>
+              <span className="text-balance block">Building</span>
+              <span className="text-primary block mt-1 sm:mt-2 min-h-[1.1em]">
+                <Typewriter strings={[
+                  "Scalable Web Apps",
+                  "AI-Powered Applications",
+                  "B2B Marketplaces",
+                  "SaaS Platforms",
+                  "E-Commerce Solutions",
+                  "Medical Portfolios",
+                  "Robust REST APIs"
+                ]} />
+              </span>
+              <span className="text-balance block">with MERN</span>
             </motion.h1>
 
             <motion.p
@@ -134,28 +145,28 @@ export function HeroSection() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto mt-2"
               custom={0.3}
               initial="hidden"
               animate="visible"
               variants={fadeUpVariants}
             >
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   onClick={() => handleScroll("portfolio")}
-                  className="group w-full sm:w-auto"
+                  className="group w-full"
                 >
                   View Portfolio
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
                   onClick={() => handleScroll("contact")}
-                  className="group w-full sm:w-auto"
+                  className="group w-full"
                 >
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me

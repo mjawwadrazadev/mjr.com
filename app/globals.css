@@ -88,3 +88,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes beamTravel {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-beam {
+  animation: beamTravel 1.3s ease-in-out infinite;
+}
+

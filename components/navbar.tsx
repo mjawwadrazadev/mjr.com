@@ -65,7 +65,7 @@ export function Navbar() {
     e.preventDefault()
     const targetId = href.substring(1)
     const element = document.getElementById(targetId)
-    
+
     // Close mobile menu first
     setIsMobileMenuOpen(false)
 
@@ -120,16 +120,39 @@ export function Navbar() {
           <motion.a
             href="#home"
             onClick={(e) => handleNavClick(e, "#home")}
-            className="group relative text-lg sm:text-xl font-mono font-bold text-foreground transition-colors"
-            whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-            whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
+            className="group relative text-[29px] sm:text-[33px] font-bold font-sans tracking-tighter transition-colors flex items-center"
+            initial="initial"
+            whileHover={shouldReduceMotion ? "initial" : "hover"}
+            whileTap={shouldReduceMotion ? "initial" : "tap"}
           >
-            <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
-              {"{ "}
-              <span className="text-primary">MJR</span>
-              {" }"}
+            <span className="relative z-10 flex overflow-visible py-1 items-center leading-none">
+              {["m", "j", "r"].map((letter, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block text-foreground group-hover:text-primary transition-colors duration-300"
+                  variants={{
+                    initial: { y: 0 },
+                    hover: { y: -4 },
+                    tap: { y: 2 }
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15, delay: i * 0.05 }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+              <motion.span
+                className="inline-block text-primary text-[1.15em] leading-none"
+                variants={{
+                  initial: { scale: 1, y: 0 },
+                  hover: { scale: 1.2, y: -4, rotate: 10 },
+                  tap: { scale: 0.8, y: 2 }
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 15, delay: 3 * 0.05 }}
+              >
+                .
+              </motion.span>
             </span>
-            <span className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 blur-md bg-primary/30 transition-opacity duration-300 rounded-lg" />
+            <span className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 blur-xl bg-primary/40 transition-opacity duration-500 rounded-full scale-150" />
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -140,7 +163,7 @@ export function Navbar() {
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={cn(
-                  "text-sm font-medium transition-colors relative py-2",
+                  "text-[19px] font-medium transition-colors relative py-2",
                   activeSection === item.href.substring(1)
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
@@ -152,7 +175,7 @@ export function Navbar() {
                 {activeSection === item.href.substring(1) && (
                   <motion.span
                     layoutId="activeSection"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -224,7 +247,7 @@ export function Navbar() {
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
                     className={cn(
-                      "px-4 py-3 text-base font-medium rounded-xl transition-all duration-200",
+                      "px-4 py-3 text-[17px] font-medium rounded-xl transition-all duration-200",
                       activeSection === item.href.substring(1)
                         ? "text-primary bg-primary/10 pl-6"
                         : "text-muted-foreground hover:text-foreground hover:bg-white/5"
