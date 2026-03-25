@@ -27,7 +27,21 @@ export const metadata: Metadata = {
       "Building Scalable Full-Stack Web Applications with MERN",
     type: "website",
   },
-    generator: 'v0.app'
+  icons: {
+    icon: [
+      { url: "/favicons/favicon.ico", sizes: "any" },
+      { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "android-chrome-192x192", url: "/favicons/android-chrome-192x192.png" },
+      { rel: "android-chrome-512x512", url: "/favicons/android-chrome-512x512.png" },
+    ],
+  },
+  generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
