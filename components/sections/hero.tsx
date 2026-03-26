@@ -115,7 +115,7 @@ export function HeroSection() {
               variants={fadeUpVariants}
             >
               <span className="text-balance block">Building</span>
-              <span className="text-primary light-gradient-text-primary block w-fit mt-1 sm:mt-2 min-h-[1.1em]">
+              <span className="text-primary light-gradient-text-primary block w-fit mx-auto lg:mx-0 mt-1 sm:mt-2 min-h-[1.1em]">
                 <Typewriter strings={[
                   "Scalable Web Apps",
                   "AI-Powered Applications",
