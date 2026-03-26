@@ -115,14 +115,14 @@ export function HeroSection() {
               variants={fadeUpVariants}
             >
               <span className="text-balance block">Building</span>
-              <span className="text-primary block mt-1 sm:mt-2 min-h-[1.1em]">
+              <span className="text-primary light-gradient-text-primary block w-fit mt-1 sm:mt-2 min-h-[1.1em]">
                 <Typewriter strings={[
                   "Scalable Web Apps",
                   "AI-Powered Applications",
                   "B2B Marketplaces",
                   "SaaS Platforms",
                   "E-Commerce Solutions",
-                  "Medical Portfolios",
+                  "Personal Portfolios",
                   "Robust REST APIs"
                 ]} />
               </span>
@@ -166,7 +166,7 @@ export function HeroSection() {
                   size="lg"
                   variant="outline"
                   onClick={() => handleScroll("contact")}
-                  className="group w-full"
+                  className="group w-full hover:bg-primary hover:text-white dark:hover:bg-primary/20 dark:hover:text-white dark:hover:border-primary transition-all duration-300"
                 >
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me

@@ -2,8 +2,12 @@
 
 import { useEffect, useState, useCallback } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
+import { useTheme } from "next-themes"
 
 export function CustomCursor() {
+  const { resolvedTheme } = useTheme()
+  const isLightMode = resolvedTheme === "light"
+  
   const [isVisible, setIsVisible] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
   const [isTouchDevice, setIsTouchDevice] = useState(false)
@@ -76,7 +80,7 @@ export function CustomCursor() {
     <>
       {/* Inner Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className={`fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999] ${!isLightMode ? 'mix-blend-difference' : ''}`}
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -84,7 +88,7 @@ export function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isHovering ? 0 : 1,
+          scale: 1,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{ duration: 0.15 }}
@@ -100,9 +104,9 @@ export function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isHovering ? 1.5 : 1,
+          scale: 1,
           opacity: isVisible ? 1 : 0,
-          borderColor: isHovering ? "var(--primary)" : "var(--primary)",
+          borderColor: "var(--primary)",
         }}
         transition={{ duration: 0.2 }}
       />
@@ -115,11 +119,12 @@ export function CustomCursor() {
           y: cursorYSpring,
           translateX: "-50%",
           translateY: "-50%",
-          background:
-            "radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%)",
+          background: isLightMode 
+            ? "radial-gradient(circle, rgba(15, 23, 42, 0.1) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%)",
         }}
         animate={{
-          scale: isHovering ? 1.8 : 1,
+          scale: 1,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{ duration: 0.2 }}

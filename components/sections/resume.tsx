@@ -62,7 +62,7 @@ export function ResumeSection() {
             Resume
           </span>
           <div className="inline-block mt-2 mb-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground light-gradient-text mb-2 text-balance">
               Experience & Education
             </h2>
             <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
@@ -135,14 +135,24 @@ export function ResumeSection() {
               <StaggerContainer className="space-y-4 sm:space-y-6">
                 {education.map((edu, index) => (
                   <StaggerItem key={index}>
-                    <div className="p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors">
-                      <h4 className="text-sm sm:text-base text-foreground font-semibold mb-1">
-                        {edu.degree}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-muted-foreground mb-1.5 sm:mb-2">
-                        {edu.institution}
-                      </p>
-                      <span className="text-xs text-primary">{edu.period}</span>
+                    <div className="relative rounded-xl overflow-hidden group bg-border p-[2px]">
+                      {/* Spinning Comet Border Gradient (Visible on Hover) */}
+                      <div
+                        className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style={{ background: 'conic-gradient(from 0deg, transparent 0 280deg, var(--primary) 360deg)' }}
+                      />
+
+                      <div className="relative p-3 sm:p-4 rounded-[10px] bg-card z-10 transition-colors">
+                        <h4 className="text-sm sm:text-base text-foreground font-semibold mb-1">
+                          {edu.degree}
+                        </h4>
+                        <p className="text-sm text-muted-foreground mb-2">
+                          {edu.institution}
+                        </p>
+                        <p className="text-xs sm:text-sm text-primary font-medium">
+                          {edu.period}
+                        </p>
+                      </div>
                     </div>
                   </StaggerItem>
                 ))}

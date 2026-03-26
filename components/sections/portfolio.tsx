@@ -78,7 +78,7 @@ export function PortfolioSection() {
             Portfolio
           </span>
           <div className="inline-block mt-2 mb-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground light-gradient-text mb-2">
               Featured Projects
             </h2>
             <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
@@ -119,7 +119,7 @@ export function PortfolioSection() {
                 <div className="w-full lg:w-[40%] space-y-6">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
                       <Button

@@ -72,8 +72,8 @@ export function ContactSection() {
             Contact
           </span>
           <div className="inline-block mt-2 mb-4 sm:mb-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
-              {"Let's Work Together"}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground light-gradient-text mb-2 text-balance">
+              Let&apos;s Build Something Together
             </h2>
             <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
               <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent animate-beam" />
@@ -95,37 +95,46 @@ export function ContactSection() {
               <StaggerContainer className="flex-1 flex flex-col justify-between space-y-0 gap-3 sm:gap-4">
                 {contactInfo.map((item) => (
                   <StaggerItem key={item.label} className="flex-1">
-                    <div className="h-full flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                        <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-xs sm:text-sm text-muted-foreground">
-                          {item.label}
-                        </p>
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            target={
-                              item.href.startsWith("http") ? "_blank" : undefined
-                            }
-                            rel={
-                              item.href.startsWith("http")
-                                ? "noopener noreferrer"
-                                : undefined
-                            }
-                            className="text-sm sm:text-base text-foreground font-medium hover:text-primary transition-colors flex items-center gap-1 truncate"
-                          >
-                            <span className="truncate">{item.value}</span>
-                            {item.href.startsWith("http") && (
-                              <ExternalLink className="w-3 h-3 shrink-0" />
-                            )}
-                          </a>
-                        ) : (
-                          <p className="text-sm sm:text-base text-foreground font-medium">
-                            {item.value}
+                    <div className="relative rounded-xl overflow-hidden group h-full bg-border p-[2px]">
+                      {/* Spinning Comet Border Gradient (Visible on Hover) */}
+                      <div
+                        className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style={{ background: 'conic-gradient(from 0deg, transparent 0 280deg, var(--primary) 360deg)' }}
+                      />
+
+                      {/* Card Content Wrapper */}
+                      <div className="relative h-full flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-[10px] bg-card z-10 transition-colors">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                          <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs sm:text-sm text-muted-foreground">
+                            {item.label}
                           </p>
-                        )}
+                          {item.href ? (
+                            <a
+                              href={item.href}
+                              target={
+                                item.href.startsWith("http") ? "_blank" : undefined
+                              }
+                              rel={
+                                item.href.startsWith("http")
+                                  ? "noopener noreferrer"
+                                  : undefined
+                              }
+                              className="text-sm sm:text-base text-foreground font-medium hover:text-primary transition-colors flex items-center gap-1 truncate"
+                            >
+                              <span className="truncate">{item.value}</span>
+                              {item.href.startsWith("http") && (
+                                <ExternalLink className="w-3 h-3 shrink-0" />
+                              )}
+                            </a>
+                          ) : (
+                            <p className="text-sm sm:text-base text-foreground font-medium">
+                              {item.value}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </StaggerItem>
@@ -137,8 +146,8 @@ export function ContactSection() {
           {/* Contact Form */}
           <FadeIn direction="right" className="h-full">
             <div className="h-full flex flex-col">
-              <h3 
-                className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 invisible shrink-0" 
+              <h3
+                className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 invisible shrink-0"
                 aria-hidden="true"
               >
                 Send a Message
