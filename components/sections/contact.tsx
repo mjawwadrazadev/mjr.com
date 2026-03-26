@@ -9,6 +9,12 @@ import { Label } from "@/components/ui/label"
 import { Mail, Phone, Linkedin, MapPin, Send, ExternalLink } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
+import { Zen_Dots } from "next/font/google"
+
+const zenDots = Zen_Dots({ 
+  weight: '400',
+  subsets: ['latin'],
+})
 
 const contactInfo = [
   {
@@ -68,16 +74,13 @@ export function ContactSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn className="text-center mb-12 sm:mb-16">
-          <span className="block text-primary text-xs sm:text-sm font-medium tracking-wider uppercase">
+          <span className="block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
             Contact
           </span>
           <div className="inline-block mt-2 mb-4 sm:mb-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground light-gradient-text mb-2 text-balance">
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-tight text-foreground light-gradient-text mb-2 text-balance ${zenDots.className}`}>
               Let&apos;s Build Something Together
             </h2>
-            <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
-              <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent animate-beam" />
-            </div>
           </div>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
             Have a project in mind or want to collaborate? Feel free to reach

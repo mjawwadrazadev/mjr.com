@@ -5,6 +5,12 @@ import { ArrowRight, Mail } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import Image from "next/image"
 import { Typewriter } from "@/components/typewriter"
+import { Zen_Dots } from "next/font/google"
+
+const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion()
@@ -96,7 +102,7 @@ export function HeroSection() {
           {/* Text Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-secondary/50 border border-border mb-6 sm:mb-8"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-secondary/50 border border-border mt-6 lg:mt-0 lg:-translate-y-[15px] mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -108,7 +114,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-foreground mb-4 sm:mb-6"
+              className={`text-[30px] sm:text-3xl md:text-5xl lg:text-5xl tracking-tight text-foreground mb-4 sm:mb-6 ${zenDots.className}`}
               custom={0.1}
               initial="hidden"
               animate="visible"
@@ -118,7 +124,7 @@ export function HeroSection() {
               <span className="text-primary light-gradient-text-primary block w-fit mx-auto lg:mx-0 mt-1 sm:mt-2 min-h-[1.1em]">
                 <Typewriter strings={[
                   "Scalable Web Apps",
-                  "AI-Powered Applications",
+                  "AI-Powered Apps",
                   "B2B Marketplaces",
                   "SaaS Platforms",
                   "E-Commerce Solutions",

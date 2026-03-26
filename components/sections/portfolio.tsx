@@ -8,6 +8,12 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion-wrapper"
+import { Zen_Dots } from "next/font/google"
+
+const zenDots = Zen_Dots({ 
+  weight: '400',
+  subsets: ['latin'],
+})
 
 const projects = [
   {
@@ -74,16 +80,13 @@ export function PortfolioSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn className="text-center mb-16 sm:mb-20">
-          <span className="block text-primary text-xs sm:text-sm font-medium tracking-wider uppercase">
+          <span className="block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
             Portfolio
           </span>
           <div className="inline-block mt-2 mb-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground light-gradient-text mb-2">
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-tight text-foreground light-gradient-text mb-2 ${zenDots.className}`}>
               Featured Projects
             </h2>
-            <div className="relative w-full h-1 overflow-hidden rounded-full bg-primary/20">
-              <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent animate-beam" />
-            </div>
           </div>
         </FadeIn>
 
