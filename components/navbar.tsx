@@ -127,7 +127,7 @@ export function Navbar() {
             whileTap={shouldReduceMotion ? "initial" : "tap"}
           >
             <span className="relative z-10 flex overflow-visible py-1 items-center leading-none">
-              {["m", "j", "r"].map((letter, i) => (
+              {["M.", "Jawwad ", "Raza"].map((letter, i) => (
                 <motion.span
                   key={i}
                   className="inline-block text-foreground group-hover:text-primary transition-colors duration-300"
@@ -159,66 +159,66 @@ export function Navbar() {
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={cn(
-                  "text-[19px] font-medium transition-colors relative py-2",
-                  activeSection === item.href.substring(1)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-                whileHover={shouldReduceMotion ? {} : { y: -2 }}
-                transition={{ duration: 0.2 }}
-              >
-                {item.name}
-                {activeSection === item.href.substring(1) && (
-                  <motion.span
-                    layoutId="activeSection"
-                    className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </motion.a>
-            ))}
-          </div>
-
-          <ThemeToggle />
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            type="button"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-foreground hover:text-primary transition-colors border border-white/5"
-            aria-label="Toggle menu"
-            whileTap={shouldReduceMotion ? {} : { scale: 0.9 }}
-          >
-            <AnimatePresence mode="wait">
-              {isMobileMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={shouldReduceMotion ? false : { rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={shouldReduceMotion ? {} : { rotate: 90, opacity: 0 }}
+              {navItems.map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={cn(
+                    "text-[19px] font-medium transition-colors relative py-2",
+                    activeSection === item.href.substring(1)
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  whileHover={shouldReduceMotion ? {} : { y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X size={24} />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={shouldReduceMotion ? false : { rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={shouldReduceMotion ? {} : { rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={24} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
+                  {item.name}
+                  {activeSection === item.href.substring(1) && (
+                    <motion.span
+                      layoutId="activeSection"
+                      className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </motion.a>
+              ))}
+            </div>
+
+            <ThemeToggle />
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-foreground hover:text-primary transition-colors border border-white/5"
+              aria-label="Toggle menu"
+              whileTap={shouldReduceMotion ? {} : { scale: 0.9 }}
+            >
+              <AnimatePresence mode="wait">
+                {isMobileMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={shouldReduceMotion ? false : { rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={shouldReduceMotion ? {} : { rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X size={24} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={shouldReduceMotion ? false : { rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={shouldReduceMotion ? {} : { rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu size={24} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
           </div>
         </div>
 
