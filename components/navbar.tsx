@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -155,8 +156,9 @@ export function Navbar() {
             <span className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 blur-xl bg-primary/40 transition-opacity duration-500 rounded-full scale-150" />
           </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
@@ -182,6 +184,8 @@ export function Navbar() {
               </motion.a>
             ))}
           </div>
+
+          <ThemeToggle />
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -215,6 +219,7 @@ export function Navbar() {
               )}
             </AnimatePresence>
           </motion.button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

@@ -234,8 +234,7 @@ export function HeroSection() {
 
                   {/* Color Overlay & Vignette */}
                   <div
-                    className="absolute inset-0 mix-blend-color opacity-40 pointer-events-none"
-                    style={{ backgroundColor: '#09665dff' }}
+                    className="absolute inset-0 bg-primary mix-blend-color opacity-50 pointer-events-none transition-colors duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 </div>
