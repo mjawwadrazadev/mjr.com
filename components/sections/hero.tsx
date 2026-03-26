@@ -234,9 +234,9 @@ export function HeroSection() {
 
                   {/* Color Overlay & Vignette */}
                   <div
-                    className="absolute inset-0 bg-primary mix-blend-color opacity-50 pointer-events-none transition-colors duration-500"
+                    className="absolute inset-0 bg-primary mix-blend-color opacity-30 pointer-events-none transition-colors duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/10 dark:from-background/60 via-transparent to-transparent" />
                 </div>
               </div>
             </motion.div>
