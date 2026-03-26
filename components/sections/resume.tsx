@@ -135,14 +135,18 @@ export function ResumeSection() {
               <StaggerContainer className="space-y-4 sm:space-y-6">
                 {education.map((edu, index) => (
                   <StaggerItem key={index}>
-                    <div className="relative rounded-xl overflow-hidden group bg-border p-[2px]">
+                    <div className="relative rounded-xl overflow-hidden group bg-card border border-border transition-colors">
                       {/* Spinning Comet Border Gradient (Visible on Hover) */}
                       <div
-                        className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
                         style={{ background: 'conic-gradient(from 0deg, transparent 0 280deg, var(--primary) 360deg)' }}
                       />
 
-                      <div className="relative p-3 sm:p-4 rounded-[10px] bg-card z-10 transition-colors">
+                      {/* Inner mask to create the 2px glowing track inside the 1px physical border */}
+                      <div className="absolute inset-[2px] rounded-[10px] bg-card pointer-events-none z-10 transition-colors" />
+
+                      {/* Card Content Wrapper */}
+                      <div className="relative p-3 sm:p-4 z-20">
                         <h4 className="text-sm sm:text-base text-foreground font-semibold mb-1">
                           {edu.degree}
                         </h4>

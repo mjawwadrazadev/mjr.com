@@ -119,7 +119,7 @@ export function PortfolioSection() {
                 <div className="w-full lg:w-[40%] space-y-6">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-foreground light-gradient-text group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
                       <Button

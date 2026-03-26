@@ -95,15 +95,18 @@ export function ContactSection() {
               <StaggerContainer className="flex-1 flex flex-col justify-between space-y-0 gap-3 sm:gap-4">
                 {contactInfo.map((item) => (
                   <StaggerItem key={item.label} className="flex-1">
-                    <div className="relative rounded-xl overflow-hidden group h-full bg-border p-[2px]">
+                    <div className="relative rounded-xl overflow-hidden group h-full bg-card border border-border transition-colors">
                       {/* Spinning Comet Border Gradient (Visible on Hover) */}
                       <div
-                        className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
                         style={{ background: 'conic-gradient(from 0deg, transparent 0 280deg, var(--primary) 360deg)' }}
                       />
 
+                      {/* Inner mask to create the 2px glowing track inside the 1px physical border */}
+                      <div className="absolute inset-[2px] rounded-[10px] bg-card pointer-events-none z-10 transition-colors" />
+
                       {/* Card Content Wrapper */}
-                      <div className="relative h-full flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-[10px] bg-card z-10 transition-colors">
+                      <div className="relative h-full flex items-center gap-3 sm:gap-4 p-3 sm:p-4 z-20">
                         <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                           <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                         </div>

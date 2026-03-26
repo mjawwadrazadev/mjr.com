@@ -165,15 +165,18 @@ export function AboutSection() {
           {features.map((feature) => (
             <StaggerItem key={feature.title}>
               <ScaleOnHover className="h-full">
-                <div className="relative rounded-xl overflow-hidden group h-full bg-border p-[2px]">
+                <div className="relative rounded-xl overflow-hidden group h-full bg-card border border-border transition-colors">
                   {/* Spinning Comet Border Gradient (Visible on Hover) */}
                   <div
-                    className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
                     style={{ background: 'conic-gradient(from 0deg, transparent 0 280deg, var(--primary) 360deg)' }}
                   />
 
+                  {/* Inner mask to create the 2px glowing track inside the 1px physical border */}
+                  <div className="absolute inset-[2px] rounded-[10px] bg-card pointer-events-none z-10 transition-colors" />
+
                   {/* Card Content Wrapper */}
-                  <div className="relative p-4 sm:p-6 rounded-[10px] bg-card h-full z-10 flex flex-col items-start transition-colors">
+                  <div className="relative p-4 sm:p-6 h-full z-20 flex flex-col items-start transition-colors">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors shrink-0">
                       <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
