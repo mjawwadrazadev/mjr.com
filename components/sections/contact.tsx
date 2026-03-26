@@ -90,7 +90,7 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           {/* Contact Info */}
-          <FadeIn direction="left" className="h-full">
+          <FadeIn direction="right" className="h-full">
             <div className="h-full flex flex-col">
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6 shrink-0">
                 Get in Touch
@@ -150,7 +150,7 @@ export function ContactSection() {
           </FadeIn>
 
           {/* Contact Form */}
-          <FadeIn direction="right" className="h-full">
+          <FadeIn direction="left" className="h-full">
             <div className="h-full flex flex-col">
               <h3
                 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 invisible shrink-0"

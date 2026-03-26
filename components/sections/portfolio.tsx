@@ -97,7 +97,11 @@ export function PortfolioSection() {
               <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center`}>
 
                 {/* Project Image */}
-                <div className="w-full lg:w-[60%] group">
+                <FadeIn 
+                  direction={index % 2 === 0 ? "right" : "left"} 
+                  className="w-full lg:w-[60%] group"
+                  duration={1.0}
+                >
                   <a 
                     href={project.link} 
                     target="_blank" 
@@ -116,10 +120,14 @@ export function PortfolioSection() {
                       </div>
                     </div>
                   </a>
-                </div>
+                </FadeIn>
 
                 {/* Project Content */}
-                <div className="w-full lg:w-[40%] space-y-6">
+                <FadeIn 
+                  direction={index % 2 === 0 ? "left" : "right"}
+                  className="w-full lg:w-[40%] space-y-6"
+                  duration={1.0}
+                >
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-2xl sm:text-3xl font-bold text-foreground light-gradient-text group-hover:text-primary transition-colors">
@@ -172,7 +180,7 @@ export function PortfolioSection() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </FadeIn>
               </div>
             </StaggerItem>
           ))}

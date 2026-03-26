@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion"
 import Image from "next/image"
 import { Typewriter } from "@/components/typewriter"
 import { Zen_Dots } from "next/font/google"
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
 
 const zenDots = Zen_Dots({
   weight: '400',
@@ -28,7 +29,7 @@ export function HeroSection() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.9,
         delay: shouldReduceMotion ? 0 : delay,
         ease: [0.25, 0.1, 0.25, 1] as const,
       },
@@ -39,8 +40,8 @@ export function HeroSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.6,
+        staggerChildren: 0.12,
+        delayChildren: 0.8,
       },
     },
   }
@@ -51,7 +52,7 @@ export function HeroSection() {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.4,
+        duration: 0.7,
         ease: [0.25, 0.1, 0.25, 1] as const,
       },
     },
@@ -100,12 +101,12 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="text-center lg:text-left order-2 lg:order-1">
+          <FadeIn direction="right" className="text-center lg:text-left order-2 lg:order-1">
             <motion.div
               className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-secondary/50 border border-border mt-6 lg:mt-0 lg:-translate-y-[15px] mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8 }}
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-xs sm:text-sm text-muted-foreground">
@@ -205,14 +206,12 @@ export function HeroSection() {
                 </motion.span>
               ))}
             </motion.div>
-          </div>
+          </FadeIn>
 
           {/* Portrait Image */}
-          <motion.div
+          <FadeIn
+            direction="left"
             className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
-            initial="hidden"
-            animate="visible"
-            variants={imageVariants}
           >
             <motion.div
               className="relative"
@@ -240,13 +239,13 @@ export function HeroSection() {
 
                   {/* Color Overlay & Vignette */}
                   <div
-                    className="absolute inset-0 bg-primary mix-blend-color opacity-30 pointer-events-none transition-colors duration-500"
+                    className="absolute inset-0 bg-primary mix-blend-color opacity-15 pointer-events-none transition-colors duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/10 dark:from-background/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/10 dark:from-background/25 via-transparent to-transparent" />
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

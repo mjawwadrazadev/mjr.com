@@ -92,7 +92,7 @@ export function AboutSection() {
 
         {/* About Content */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start mb-16 sm:mb-20">
-          <FadeIn direction="left" className="space-y-4 sm:space-y-6">
+          <FadeIn direction="right" className="space-y-4 sm:space-y-6">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               With{" "}
               <span className="text-foreground font-semibold">
@@ -127,7 +127,7 @@ export function AboutSection() {
           </FadeIn>
 
           {/* Tech Stack */}
-          <FadeIn direction="right" className="space-y-6 sm:space-y-8">
+          <FadeIn direction="left" className="space-y-6 sm:space-y-8">
             <div>
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
                 <LayoutTemplate className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />

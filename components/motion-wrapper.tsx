@@ -14,7 +14,7 @@ interface FadeInProps {
 export function FadeIn({
   children,
   delay = 0,
-  duration = 0.5,
+  duration = 0.8,
   className = "",
   direction = "up",
 }: FadeInProps) {
@@ -106,7 +106,7 @@ export function StaggerItem({ children, className = "" }: StaggerItemProps) {
           opacity: 1,
           y: 0,
           transition: {
-            duration: 0.5,
+            duration: 0.8,
             ease: [0.25, 0.1, 0.25, 1] as const,
           },
         },

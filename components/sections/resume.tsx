@@ -76,7 +76,7 @@ export function ResumeSection() {
 
         <div className="grid lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
           {/* Work Experience */}
-          <FadeIn direction="left" className="lg:col-span-2">
+          <FadeIn direction="right" className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
@@ -123,7 +123,7 @@ export function ResumeSection() {
           </FadeIn>
 
           {/* Education & Languages */}
-          <FadeIn direction="right" className="space-y-8">
+          <FadeIn direction="left" className="space-y-8">
             {/* Education */}
             <div>
               <div className="flex items-center gap-3 mb-6 sm:mb-8">
