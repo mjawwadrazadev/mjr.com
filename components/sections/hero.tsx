@@ -120,14 +120,14 @@ export function HeroSection() {
             </motion.div>
 
             <motion.h1
-              className={`text-[30px] sm:text-3xl md:text-5xl lg:text-5xl tracking-tight text-foreground mb-4 sm:mb-6 ${zenDots.className}`}
+              className={`text-[30px] sm:text-3xl md:text-5xl lg:text-5xl tracking-tight text-foreground mb-4 sm:mb-6 leading-[1.18] sm:leading-tight ${zenDots.className}`}
               custom={0.1}
               initial="hidden"
               animate="visible"
               variants={fadeUpVariants}
             >
               <span className="text-balance block">Building</span>
-              <span className="text-primary light-gradient-text-primary block w-fit mx-auto lg:mx-0 mt-1 sm:mt-2 min-h-[1.1em]">
+              <span className="text-primary light-gradient-text-primary block w-fit mx-auto lg:mx-0 mt-[2px] sm:mt-1 md:mt-2 min-h-[1.1em]">
                 <Typewriter strings={[
                   "Scalable Web Apps",
                   "AI-Powered Apps",
@@ -138,7 +138,7 @@ export function HeroSection() {
                   "Robust REST APIs"
                 ]} />
               </span>
-              <span className="text-balance block">with MERN</span>
+              <span className="text-balance block mt-[2px] sm:mt-1 md:mt-2">with MERN</span>
             </motion.h1>
 
             <motion.p
