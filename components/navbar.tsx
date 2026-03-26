@@ -127,7 +127,7 @@ export function Navbar() {
             whileTap={shouldReduceMotion ? "initial" : "tap"}
           >
             <span className="relative z-10 flex overflow-visible py-1 items-center leading-none">
-              {["M.", "Jawwad ", "Raza"].map((letter, i) => (
+              {["m", "j", "r"].map((letter, i) => (
                 <motion.span
                   key={i}
                   className="inline-block text-foreground group-hover:text-primary transition-colors duration-300"
