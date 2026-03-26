@@ -7,9 +7,14 @@ import {
   StaggerItem,
   ScaleOnHover,
 } from "@/components/motion-wrapper"
-import { Zen_Dots } from "next/font/google"
+import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 
 const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const jetBrainsMono = JetBrains_Mono({
   weight: '400',
   subsets: ['latin'],
 })
@@ -79,8 +84,8 @@ export function AboutSection() {
     <section id="about" className="py-16 sm:py-20 md:py-24 relative">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <FadeIn className="text-center mb-12 sm:mb-16">
-          <span className="block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
+        <FadeIn className="text-center mb-6 sm:mb-10 lg:mb-16">
+          <span className={`block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase ${jetBrainsMono.className}`}>
             About Me
           </span>
           <div className="inline-block mt-2 mb-4">
@@ -137,7 +142,7 @@ export function AboutSection() {
                 {frontendTech.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-secondary text-foreground rounded-md border border-border hover:border-primary/50 transition-colors"
+                    className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-secondary text-foreground rounded-md border border-border hover:border-primary/50 transition-colors ${jetBrainsMono.className}`}
                   >
                     {tech}
                   </span>
@@ -153,7 +158,7 @@ export function AboutSection() {
                 {backendTech.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-secondary text-foreground rounded-md border border-border hover:border-primary/50 transition-colors"
+                    className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-secondary text-foreground rounded-md border border-border hover:border-primary/50 transition-colors ${jetBrainsMono.className}`}
                   >
                     {tech}
                   </span>
@@ -183,7 +188,7 @@ export function AboutSection() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors shrink-0">
                       <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
-                    <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1.5 sm:mb-2">
+                    <h3 className={`text-base sm:text-lg font-semibold text-foreground mb-1.5 sm:mb-2 ${jetBrainsMono.className}`}>
                       {feature.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-muted-foreground flex-1">

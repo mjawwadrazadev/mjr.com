@@ -6,9 +6,14 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion-wrapper"
-import { Zen_Dots } from "next/font/google"
+import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 
-const zenDots = Zen_Dots({ 
+const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const jetBrainsMono = JetBrains_Mono({
   weight: '400',
   subsets: ['latin'],
 })
@@ -63,8 +68,8 @@ export function ResumeSection() {
     <section id="resume" className="py-16 sm:py-20 md:py-24 bg-card/30">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <FadeIn className="text-center mb-12 sm:mb-16">
-          <span className="block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
+        <FadeIn className="text-center mb-6 sm:mb-10 lg:mb-16">
+          <span className={`block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase ${jetBrainsMono.className}`}>
             Resume
           </span>
           <div className="inline-block mt-2 mb-4">
@@ -95,10 +100,10 @@ export function ResumeSection() {
                   <div className="absolute left-0 top-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary -translate-x-[6px] sm:-translate-x-[7px]" />
                   <div className="mb-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                      <h4 className="text-base sm:text-lg font-semibold text-foreground">
+                      <h4 className={`text-base sm:text-lg font-semibold text-foreground ${jetBrainsMono.className}`}>
                         {exp.title}
                       </h4>
-                      <span className="text-xs sm:text-sm text-primary font-medium px-2.5 sm:px-3 py-0.5 sm:py-1 bg-primary/10 rounded-full w-fit">
+                      <span className={`text-xs sm:text-sm text-primary font-medium px-2.5 sm:px-3 py-0.5 sm:py-1 bg-primary/10 rounded-full w-fit ${jetBrainsMono.className}`}>
                         {exp.period}
                       </span>
                     </div>
@@ -150,7 +155,7 @@ export function ResumeSection() {
 
                       {/* Card Content Wrapper */}
                       <div className="relative p-3 sm:p-4 z-20">
-                        <h4 className="text-sm sm:text-base text-foreground font-semibold mb-1">
+                        <h4 className={`text-sm sm:text-base text-foreground font-semibold mb-1 ${jetBrainsMono.className}`}>
                           {edu.degree}
                         </h4>
                         <p className="text-sm text-muted-foreground mb-2">

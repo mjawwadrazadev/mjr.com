@@ -9,9 +9,14 @@ import { Label } from "@/components/ui/label"
 import { Mail, Phone, Linkedin, MapPin, Send, ExternalLink } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
-import { Zen_Dots } from "next/font/google"
+import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 
-const zenDots = Zen_Dots({ 
+const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const jetBrainsMono = JetBrains_Mono({
   weight: '400',
   subsets: ['latin'],
 })
@@ -73,8 +78,8 @@ export function ContactSection() {
     <section id="contact" className="py-16 sm:py-20 md:py-24 bg-card/30">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <FadeIn className="text-center mb-12 sm:mb-16">
-          <span className="block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
+        <FadeIn className="text-center mb-6 sm:mb-10 lg:mb-16">
+          <span className={`block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase ${jetBrainsMono.className}`}>
             Contact
           </span>
           <div className="inline-block mt-2 mb-4 sm:mb-6">
@@ -114,7 +119,7 @@ export function ContactSection() {
                           <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs sm:text-sm text-muted-foreground">
+                          <p className={`text-xs sm:text-sm text-muted-foreground ${jetBrainsMono.className}`}>
                             {item.label}
                           </p>
                           {item.href ? (
@@ -128,7 +133,7 @@ export function ContactSection() {
                                   ? "noopener noreferrer"
                                   : undefined
                               }
-                              className="text-sm sm:text-base text-foreground font-medium hover:text-primary transition-colors flex items-center gap-1 truncate"
+                              className={`text-sm sm:text-base text-foreground font-medium hover:text-primary transition-colors flex items-center gap-1 truncate ${jetBrainsMono.className}`}
                             >
                               <span className="truncate">{item.value}</span>
                               {item.href.startsWith("http") && (
@@ -136,7 +141,7 @@ export function ContactSection() {
                               )}
                             </a>
                           ) : (
-                            <p className="text-sm sm:text-base text-foreground font-medium">
+                            <p className={`text-sm sm:text-base text-foreground font-medium ${jetBrainsMono.className}`}>
                               {item.value}
                             </p>
                           )}

@@ -5,10 +5,15 @@ import { ArrowRight, Mail } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import Image from "next/image"
 import { Typewriter } from "@/components/typewriter"
-import { Zen_Dots } from "next/font/google"
+import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
 
 const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const jetBrainsMono = JetBrains_Mono({
   weight: '400',
   subsets: ['latin'],
 })
@@ -109,7 +114,7 @@ export function HeroSection() {
               transition={{ duration: 0.8 }}
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs sm:text-sm text-muted-foreground">
+              <span className={`text-xs sm:text-sm text-muted-foreground ${jetBrainsMono.className}`}>
                 Available for new projects
               </span>
             </motion.div>
@@ -200,7 +205,7 @@ export function HeroSection() {
                   key={tech}
                   variants={pillVariants}
                   whileHover={{ scale: 1.05, borderColor: "var(--primary)" }}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-secondary/50 text-muted-foreground rounded-full border border-border hover:text-foreground transition-colors"
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-secondary/50 text-muted-foreground rounded-full border border-border hover:text-foreground transition-colors ${jetBrainsMono.className}`}
                 >
                   {tech}
                 </motion.span>

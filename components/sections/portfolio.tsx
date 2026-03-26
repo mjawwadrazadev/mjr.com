@@ -8,10 +8,15 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion-wrapper"
-import { Zen_Dots } from "next/font/google"
+import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 
-const zenDots = Zen_Dots({ 
+const zenDots = Zen_Dots({
   weight: '400',
+  subsets: ['latin'],
+})
+
+const jetBrainsMono = JetBrains_Mono({
+  weight: ['400', '700', '800'],
   subsets: ['latin'],
 })
 
@@ -79,12 +84,12 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <FadeIn className="text-center mb-16 sm:mb-20">
-          <span className="block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
+        <FadeIn className="text-center mb-10 sm:mb-16">
+          <span className={`block text-primary text-xs sm:text-sm font-bold tracking-wider uppercase ${jetBrainsMono.className}`}>
             Portfolio
           </span>
           <div className="inline-block mt-2 mb-4">
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-tight text-foreground light-gradient-text mb-2 ${zenDots.className}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-tight text-foreground light-gradient-text mb-2 py-1 leading-normal ${zenDots.className}`}>
               Featured Projects
             </h2>
           </div>
@@ -97,14 +102,14 @@ export function PortfolioSection() {
               <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center`}>
 
                 {/* Project Image */}
-                <FadeIn 
-                  direction={index % 2 === 0 ? "right" : "left"} 
+                <FadeIn
+                  direction={index % 2 === 0 ? "right" : "left"}
                   className="w-full lg:w-[60%] group"
                   duration={1.0}
                 >
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
+                  <a
+                    href={project.link}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="block relative aspect-video overflow-hidden rounded-2xl border border-border bg-secondary/30 shadow-2xl cursor-pointer"
                   >
@@ -123,14 +128,14 @@ export function PortfolioSection() {
                 </FadeIn>
 
                 {/* Project Content */}
-                <FadeIn 
+                <FadeIn
                   direction={index % 2 === 0 ? "left" : "right"}
                   className="w-full lg:w-[40%] space-y-6"
                   duration={1.0}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-2xl sm:text-3xl font-bold text-foreground light-gradient-text group-hover:text-primary transition-colors">
+                      <h3 className={`text-2xl sm:text-3xl font-extrabold text-foreground light-gradient-text group-hover:text-primary transition-colors ${jetBrainsMono.className}`}>
                         {project.title}
                       </h3>
                       <Button
@@ -174,7 +179,7 @@ export function PortfolioSection() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-4 py-1.5 text-xs font-medium bg-secondary/50 text-muted-foreground rounded-full border border-border"
+                        className={`px-4 py-1.5 text-xs font-medium bg-secondary/50 text-muted-foreground rounded-full border border-border ${jetBrainsMono.className}`}
                       >
                         {tech}
                       </span>
