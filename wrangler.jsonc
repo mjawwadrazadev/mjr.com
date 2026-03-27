@@ -1,14 +1,36 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+
+  // Worker identity
   "name": "mjawwadraza",
+
+  // OpenNext build output entry point
   "main": ".open-next/worker.js",
+
+  // Node.js compatibility required by Next.js
   "compatibility_date": "2025-09-27",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": {
-    "enabled": true
-  },
+
+  // Custom domain — keeps the dashboard in sync
+  "routes": [
+    {
+      "pattern": "mjawwadraza.com/*",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.mjawwadraza.com/*",
+      "custom_domain": true
+    }
+  ],
+
+  // Static assets from OpenNext build
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
+  },
+
+  // Observability / logging
+  "observability": {
+    "enabled": true
   }
 }
