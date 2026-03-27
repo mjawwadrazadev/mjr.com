@@ -120,6 +120,7 @@ export function Navbar() {
         <div className="flex h-14 sm:h-16 items-center justify-between relative z-10">
           <motion.a
             href="#home"
+            aria-label="Muhammad Jawwad Raza Portfolio Home"
             onClick={(e) => handleNavClick(e, "#home")}
             className="group relative text-[29px] sm:text-[33px] font-bold font-sans tracking-tighter transition-colors flex items-center"
             initial="initial"

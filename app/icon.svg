@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .primary { fill: #3b82f6; } /* Example Blue color for primary */
+      .bg { fill: #0f172a; }   /* Example Dark color for background */
+      .text { fill: white; }
+    }
+    @media (prefers-color-scheme: light) {
+      .primary { fill: #2563eb; }
+      .bg { fill: #f8fafc; }
+      .text { fill: #0f172a; }
+    }
+  </style>
+  <rect width="64" height="64" rx="16" class="bg"/>
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="34" font-weight="bold" class="text">mjr</text>
+  <circle cx="51" cy="46" r="4" class="primary"/>
+</svg>
