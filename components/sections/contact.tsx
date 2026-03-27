@@ -6,10 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, Linkedin, MapPin, Send, ExternalLink } from "lucide-react"
+import { Mail, Phone, Linkedin, MapPin, Send, ExternalLink, Calendar } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
 import { Zen_Dots, JetBrains_Mono } from "next/font/google"
+import { useTheme } from "next-themes"
+import Lottie from "lottie-react"
+import virtualMeetingLight from "../../public/lottie/Virtual Meeting2.json"
+import virtualMeetingDark from "../../public/lottie/Virtual Meeting dark.json"
 
 const zenDots = Zen_Dots({
   weight: '400',
@@ -49,6 +53,8 @@ const contactInfo = [
 ]
 
 export function ContactSection() {
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
   const shouldReduceMotion = useReducedMotion()
   const [formData, setFormData] = useState({
     name: "",
@@ -56,6 +62,10 @@ export function ContactSection() {
     subject: "",
     message: "",
   })
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -73,6 +83,8 @@ export function ContactSection() {
   }
 
   const MotionButton = shouldReduceMotion ? Button : motion.create(Button)
+  const currentTheme = resolvedTheme || theme
+  const activeAnimation = currentTheme === "dark" ? virtualMeetingDark : virtualMeetingLight
 
   return (
     <section id="contact" className="py-16 sm:py-20 md:py-24 bg-card/30">
@@ -154,95 +166,50 @@ export function ContactSection() {
             </div>
           </FadeIn>
 
-          {/* Contact Form */}
+          {/* Lottie Animation & Meeting Link */}
           <FadeIn direction="left" className="h-full">
             <div className="h-full flex flex-col">
-              <h3
-                className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 invisible shrink-0"
-                aria-hidden="true"
-              >
-                Send a Message
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-center lg:text-left">
+                Schedule a Consultation
               </h3>
-              <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-card border border-border">
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div className="space-y-1.5 sm:space-y-2">
-                      <Label htmlFor="name" className="text-sm">
-                        Name
-                      </Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="h-10 sm:h-11 text-sm sm:text-base"
-                      />
-                    </div>
-                    <div className="space-y-1.5 sm:space-y-2">
-                      <Label htmlFor="email" className="text-sm">
-                        Email
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="h-10 sm:h-11 text-sm sm:text-base"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="subject" className="text-sm">
-                      Subject
-                    </Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      placeholder="What's this about?"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="h-10 sm:h-11 text-sm sm:text-base"
+              <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-card border border-border flex flex-col items-center justify-between h-full min-h-[400px]">
+                <div className="w-full max-w-[300px] sm:max-w-[400px] mb-6">
+                  {mounted && (
+                    <Lottie 
+                      animationData={activeAnimation} 
+                      loop={true}
+                      className="w-full drop-shadow-2xl"
                     />
-                  </div>
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="message" className="text-sm">
-                      Message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell me about your project..."
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="text-sm sm:text-base resize-none"
-                    />
-                  </div>
+                  )}
+                </div>
+                
+                <div className="w-full space-y-4">
+                  <p className="text-sm text-muted-foreground text-center mb-6">
+                    Ready to take your business to the next level? Book a direct meeting with me to discuss your project requirements and strategy.
+                  </p>
+                  
                   {shouldReduceMotion ? (
-                    <Button type="submit" size="lg" className="w-full group">
-                      Send Message
-                      <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Button size="lg" className="w-full group h-12 text-base font-semibold shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-shadow duration-300" asChild>
+                      <a href="https://calendly.com/mjawwadraza" target="_blank" rel="noopener noreferrer">
+                        Book a meeting
+                        <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                      </a>
                     </Button>
                   ) : (
                     <MotionButton
-                      type="submit"
                       size="lg"
-                      className="w-full group"
-                      whileHover={{ scale: 1.01 }}
+                      className="w-full group h-12 text-base font-semibold shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-shadow duration-300"
+                      whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      asChild
                     >
-                      Send Message
-                      <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <a href="https://calendly.com/mjawwadraza" target="_blank" rel="noopener noreferrer">
+                        Book a meeting
+                        <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                      </a>
                     </MotionButton>
                   )}
-                </form>
+                </div>
               </div>
             </div>
           </FadeIn>
