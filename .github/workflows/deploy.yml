@@ -1,0 +1,56 @@
+name: 🚀 Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false # Don't cancel in-progress deploys
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Checkout code
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup pnpm
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      # 3. Setup Node.js with pnpm cache
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      # 4. Install dependencies (frozen for reproducible builds)
+      - name: 📚 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 5. Build with OpenNext for Cloudflare
+      - name: 🔨 Build (OpenNext + Cloudflare)
+        run: pnpm opennextjs-cloudflare build
+        env:
+          NODE_ENV: production
+
+      # 6. Deploy to Cloudflare Workers
+      - name: ☁️ Deploy to Cloudflare Workers
+        run: pnpm opennextjs-cloudflare deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      # 7. Success notification
+      - name: ✅ Deployment complete
+        run: echo "🎉 Successfully deployed to https://mjawwadraza.com"

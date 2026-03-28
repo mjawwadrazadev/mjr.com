@@ -127,9 +127,9 @@ export function BookingDrawer({ isOpen, onClose }: BookingDrawerProps) {
                   <div className="text-center">
                     <div className="flex items-center justify-center gap-2 mb-1">
                       <CalendarCheck className="h-10 w-10 text-primary" />
-                      <h1 className="text-4xl font-bold tracking-tight text-foreground">
+                      <h2 className="text-4xl font-bold tracking-tight text-foreground">
                         Book a Meeting
-                      </h1>
+                      </h2>
                     </div>
                     <p className="text-sm text-primary font-medium mb-3">
                       with Muhammad Jawwad Raza

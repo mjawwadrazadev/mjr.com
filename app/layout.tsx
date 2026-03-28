@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     "Muhammad Jawwad Raza",
     "MERN Stack Developer",
     "Full Stack Developer",
+    "AI Automation Developer",
+    "AI Agent Development",
     "Remote React Developer",
     "Remote Next.js Developer",
     "Freelance Web Developer",
@@ -27,6 +29,8 @@ export const metadata: Metadata = {
     "Bespoke SaaS Development",
     "Hiring MERN Developer",
     "Enterprise Software Development",
+    "Workflow Automation",
+    "n8n Automation Expert",
   ],
   authors: [{ name: "Muhammad Jawwad Raza", url: "https://mjawwadraza.com/" }],
   creator: "Muhammad Jawwad Raza",
@@ -56,7 +60,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://mjawwadraza.com/",
   },
-  generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
@@ -79,35 +82,53 @@ export default function RootLayout({
             {children}
           </div>
           <Analytics />
-          {/* JSON-LD Structured Data for Person/Entity */}
+          {/* JSON-LD Structured Data */}
           <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Muhammad Jawwad Raza",
-              "jobTitle": "MERN Stack Developer",
-              "url": "https://mjawwadraza.com/",
-              "sameAs": [
-                "https://github.com/mjawwadraza",
-                "https://linkedin.com/in/mjawwadraza",
-                "https://instagram.com/mjawwad_raza"
-              ],
-              "description": "Remote MERN Stack Developer with 1.5+ years of experience building scalable full-stack web applications for clients worldwide.",
-              "knowsAbout": [
-                "Reactjs",
-                "Next.js",
-                "Node.js",
-                "MongoDB",
-                "TypeScript",
-                "Remote Collaboration",
-                "Full Stack Development"
-              ],
-              "knowsLanguage": ["English", "Urdu"],
-              "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Top Ranking CS University"
+            {JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Muhammad Jawwad Raza",
+                "jobTitle": "MERN Stack & AI Automation Developer",
+                "url": "https://mjawwadraza.com/",
+                "image": "https://mjawwadraza.com/og-image.jpg",
+                "email": "mjawwadraza@gmail.com",
+                "sameAs": [
+                  "https://github.com/mjawwadraza",
+                  "https://linkedin.com/in/mjawwadraza",
+                  "https://instagram.com/mjawwad_raza",
+                  "https://cal.com/muhammad-jawwad-raza"
+                ],
+                "description": "Remote MERN Stack & AI Automation Developer with 1.5+ years of experience building scalable full-stack web applications and intelligent automation solutions for clients worldwide.",
+                "knowsAbout": [
+                  "React.js",
+                  "Next.js",
+                  "Node.js",
+                  "MongoDB",
+                  "TypeScript",
+                  "AI Automation",
+                  "n8n",
+                  "Full Stack Development",
+                  "Remote Collaboration"
+                ],
+                "knowsLanguage": ["English", "Urdu"],
+                "alumniOf": {
+                  "@type": "EducationalOrganization",
+                  "name": "Top Ranking CS University"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Muhammad Jawwad Raza | Portfolio",
+                "url": "https://mjawwadraza.com/",
+                "author": {
+                  "@type": "Person",
+                  "name": "Muhammad Jawwad Raza"
+                },
+                "description": "Portfolio of Muhammad Jawwad Raza — MERN Stack & AI Automation Developer."
               }
-            })}
+            ])}
           </Script>
         </ThemeProvider>
       </body>
