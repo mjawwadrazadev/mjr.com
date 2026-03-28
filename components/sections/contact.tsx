@@ -1,17 +1,14 @@
 "use client"
 
-import React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, Phone, Linkedin, MapPin, Send, ExternalLink, Calendar } from "lucide-react"
+import { Mail, Phone, Linkedin, MapPin, ExternalLink, Calendar } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
 import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 import { useTheme } from "next-themes"
 import Lottie from "lottie-react"
+import { BookingDrawer } from "@/components/booking-drawer"
 import virtualMeetingLight from "../../public/lottie/Virtual Meeting2.json"
 import virtualMeetingDark from "../../public/lottie/Virtual Meeting dark.json"
 
@@ -55,6 +52,7 @@ const contactInfo = [
 export function ContactSection() {
   const { theme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
   const [formData, setFormData] = useState({
     name: "",
@@ -87,6 +85,7 @@ export function ContactSection() {
   const activeAnimation = currentTheme === "dark" ? virtualMeetingDark : virtualMeetingLight
 
   return (
+    <>
     <section id="contact" className="py-16 sm:py-20 md:py-24 bg-card/30">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -189,11 +188,13 @@ export function ContactSection() {
                   </p>
                   
                   {shouldReduceMotion ? (
-                    <Button size="lg" className="w-full group h-12 text-base font-semibold shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-shadow duration-300" asChild>
-                      <a href="https://calendly.com/mjawwadraza" target="_blank" rel="noopener noreferrer">
-                        Book a meeting
-                        <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
-                      </a>
+                    <Button
+                      size="lg"
+                      className="w-full group h-12 text-base font-semibold shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-shadow duration-300"
+                      onClick={() => setIsDrawerOpen(true)}
+                    >
+                      Book a meeting
+                      <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
                     </Button>
                   ) : (
                     <MotionButton
@@ -201,12 +202,10 @@ export function ContactSection() {
                       className="w-full group h-12 text-base font-semibold shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-shadow duration-300"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      asChild
+                      onClick={() => setIsDrawerOpen(true)}
                     >
-                      <a href="https://calendly.com/mjawwadraza" target="_blank" rel="noopener noreferrer">
-                        Book a meeting
-                        <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
-                      </a>
+                      Book a meeting
+                      <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
                     </MotionButton>
                   )}
                 </div>
@@ -216,5 +215,8 @@ export function ContactSection() {
         </div>
       </div>
     </section>
+
+    <BookingDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+    </>
   )
 }
