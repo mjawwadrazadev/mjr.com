@@ -14,11 +14,11 @@
   // Custom domain — keeps the dashboard in sync
   "routes": [
     {
-      "pattern": "mjawwadraza.com/*",
+      "pattern": "mjawwadraza.com",
       "custom_domain": true
     },
     {
-      "pattern": "www.mjawwadraza.com/*",
+      "pattern": "www.mjawwadraza.com",
       "custom_domain": true
     }
   ],
