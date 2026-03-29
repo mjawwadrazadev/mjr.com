@@ -6,7 +6,7 @@ import { TabManager } from "@/components/tab-manager"
 import Script from "next/script"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mjawwadraza.com/"),
@@ -74,11 +74,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {/* Anti-ReferenceError Shim for Cloudflare/OpenNext */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(typeof globalThis.__name==='undefined'){globalThis.__name=(f)=>f;}`
+          }}
+        />
+      </head>
       <body className={`${inter.variable} font-sans antialiased text-foreground selection:bg-primary/30`}>
-        {/* Shim for __name ReferenceError on Cloudflare */}
-        <Script id="esbuild-shim" strategy="beforeInteractive">
-          {`if (typeof globalThis.__name === 'undefined') { globalThis.__name = (f) => f; }`}
-        </Script>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <TabManager />
           <div className="overflow-x-hidden min-h-screen">
