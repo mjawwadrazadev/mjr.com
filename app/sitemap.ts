@@ -2,37 +2,41 @@ import { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
+const BASE_URL = 'https://mjawwadraza.com'
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date()
+
   return [
     {
-      url: 'https://mjawwadraza.com/',
-      lastModified: new Date(),
+      url: `${BASE_URL}/`,
+      lastModified: now,
       changeFrequency: 'monthly',
-      priority: 1,
+      priority: 1.0,
     },
     {
-      url: 'https://mjawwadraza.com/#about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://mjawwadraza.com/#portfolio',
-      lastModified: new Date(),
+      url: `${BASE_URL}/portfolio`,
+      lastModified: now,
       changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: now,
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: 'https://mjawwadraza.com/#resume',
-      lastModified: new Date(),
+      url: `${BASE_URL}/resume`,
+      lastModified: now,
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.85,
     },
     {
-      url: 'https://mjawwadraza.com/#contact',
-      lastModified: new Date(),
+      url: `${BASE_URL}/contact`,
+      lastModified: now,
       changeFrequency: 'yearly',
-      priority: 0.5,
+      priority: 0.8,
     },
   ]
 }
