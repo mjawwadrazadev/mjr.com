@@ -136,6 +136,7 @@ export function ContactSection() {
                           {item.href ? (
                             <a
                               href={item.href}
+                              aria-label={`Visit my ${item.label} profile`}
                               target={
                                 item.href.startsWith("http") ? "_blank" : undefined
                               }

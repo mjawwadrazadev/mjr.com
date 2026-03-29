@@ -1,7 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TabManager } from "@/components/tab-manager"
 import Script from "next/script"
@@ -75,13 +74,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased text-foreground selection:bg-primary/30`}>
+        {/* Shim for __name ReferenceError on Cloudflare */}
+        <Script id="esbuild-shim" strategy="beforeInteractive">
+          {`if (typeof globalThis.__name === 'undefined') { globalThis.__name = (f) => f; }`}
+        </Script>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <TabManager />
           <div className="overflow-x-hidden min-h-screen">
             {children}
           </div>
-          <Analytics />
           {/* JSON-LD Structured Data */}
           <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
             {JSON.stringify([
