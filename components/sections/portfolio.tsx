@@ -49,7 +49,7 @@ const projects = [
       "SEO-optimized content",
     ],
   },
-  {
+  /* {
     title: "Dr. Jaffer Khan",
     subtitle: "World-Renowned Plastic Surgeon in Dubai",
     description:
@@ -62,7 +62,7 @@ const projects = [
       "Bespoke patient-first approach",
       "B2C Medical Branding",
     ],
-  },
+  }, */
   {
     title: "Caterbox",
     subtitle: "Effortless Catering Marketplace",
