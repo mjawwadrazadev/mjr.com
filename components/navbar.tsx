@@ -153,7 +153,7 @@ export function Navbar() {
                     {activeSection === item.section && (
                       <motion.span
                         layoutId="activeSection"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full shadow-[0_0_10px_rgba(56,189,248,0.5)]"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full shadow-none dark:shadow-[0_0_10px_rgba(56,189,248,0.5)]"
                       />
                     )}
                   </motion.a>
