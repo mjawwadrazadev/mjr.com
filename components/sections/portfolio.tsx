@@ -112,7 +112,7 @@ const projects = [
     subtitle: "AI-Powered Child Protection & Intelligence",
     description:
       "A cutting-edge MERN stack ecosystem designed for threat intelligence and online safety. Features AI-driven predator detection, real-time law enforcement coordination, and a comprehensive evidence generation system for prosecution.",
-    image: "/images/phir.png",
+    image: "/images/PHIR.png",
     link: "https://PHIR.ai/",
     tech: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Framer Motion"],
     highlights: [
