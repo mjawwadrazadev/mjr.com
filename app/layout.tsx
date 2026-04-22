@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 }
@@ -83,7 +83,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased text-foreground selection:bg-primary/30`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <TabManager />
           <div className="overflow-x-hidden min-h-screen">
             {children}
@@ -132,7 +132,7 @@ export default function RootLayout({
                   "@type": "Person",
                   "name": "Muhammad Jawwad Raza"
                 },
-                "description": "Portfolio of Muhammad Jawwad Raza — MERN Stack & AI Automation Developer."
+                "description": "Portfolio of Muhammad Jawwad Raza - MERN Stack & AI Automation Developer."
               }
             ])}
           </Script>

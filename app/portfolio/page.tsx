@@ -4,15 +4,15 @@ import { PortfolioSection } from "@/components/sections/portfolio"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Portfolio | Muhammad Jawwad Raza — Next.js, MERN & Cloudflare Projects",
+  title: "Portfolio | Muhammad Jawwad Raza - Next.js, MERN & Cloudflare Projects",
   description:
     "Explore real-world projects built by Muhammad Jawwad Raza using Next.js, React, Node.js, MongoDB, and Cloudflare Workers. Includes SaaS platforms, B2B marketplaces, AI-powered apps, and e-commerce solutions.",
   keywords: [
-    // — Brand
+    // - Brand
     "Muhammad Jawwad Raza Portfolio",
     "MJR Developer Projects",
 
-    // — Tech stack (exact match searches)
+    // - Tech stack (exact match searches)
     "Next.js Developer Portfolio",
     "React Developer Portfolio",
     "MERN Stack Projects",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Tailwind CSS Developer",
     "Server Components Next.js",
 
-    // — Project types (intent-based)
+    // - Project types (intent-based)
     "B2B Marketplace Development",
     "B2B SaaS Developer",
     "Creator Platform Development",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "E-Commerce Developer",
     "Marketplace App Developer",
 
-    // — Industry verticals
+    // - Industry verticals
     "Renewable Energy Marketplace",
     "Creator Collaboration Platform",
     "Medical Branding Website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Real-time Analytics Dashboard",
     "Lead Distribution System",
 
-    // — Hire intent
+    // - Hire intent
     "Hire Full Stack Developer",
     "Hire React Next.js Developer",
     "Hire MERN Stack Developer",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects Portfolio | Muhammad Jawwad Raza",
     description:
-      "Full-stack projects: SaaS, AI-powered apps, B2B marketplaces, and e-commerce — built with Next.js, Cloudflare Workers & MERN stack.",
+      "Full-stack projects: SaaS, AI-powered apps, B2B marketplaces, and e-commerce - built with Next.js, Cloudflare Workers & MERN stack.",
     url: "https://mjawwadraza.com/portfolio",
     siteName: "MJR Portfolio",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "MJR Projects Portfolio" }],

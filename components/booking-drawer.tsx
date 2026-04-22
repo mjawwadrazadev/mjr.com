@@ -76,7 +76,7 @@ export function BookingDrawer({ isOpen, onClose }: BookingDrawerProps) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop — z-[100] covers navbar too */}
+          {/* Backdrop - z-[100] covers navbar too */}
           <motion.div
             key="backdrop"
             initial={{ opacity: 0 }}
@@ -87,7 +87,7 @@ export function BookingDrawer({ isOpen, onClose }: BookingDrawerProps) {
             onClick={onClose}
           />
 
-          {/* Drawer — z-[101] above backdrop */}
+          {/* Drawer - z-[101] above backdrop */}
           <motion.div
             key="drawer"
             initial={{ x: "100%" }}
@@ -118,7 +118,7 @@ export function BookingDrawer({ isOpen, onClose }: BookingDrawerProps) {
               <div className="w-8" />
             </div>
 
-            {/* Body — vertically centered */}
+            {/* Body - vertically centered */}
             <div className="flex flex-1 flex-col overflow-y-auto">
               {!selectedMeeting ? (
                 <div className="flex flex-1 flex-col justify-center px-6 py-8 gap-5">

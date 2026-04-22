@@ -4,7 +4,7 @@ import { ResumeSection } from "@/components/sections/resume"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Resume | Hire Muhammad Jawwad Raza — Next.js & Web Developer CV",
+  title: "Resume | Hire Muhammad Jawwad Raza - Next.js & Web Developer CV",
   description:
     "Professional resume of Muhammad Jawwad Raza. Experienced in Next.js, React, Node.js, MongoDB, TypeScript, and Cloudflare Workers. Available for remote freelance and full-time opportunities worldwide.",
   keywords: [

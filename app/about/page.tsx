@@ -4,9 +4,9 @@ import { AboutSection } from "@/components/sections/about"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "About | Muhammad Jawwad Raza — Next.js & Cloudflare Developer",
+  title: "About | Muhammad Jawwad Raza - Next.js & Cloudflare Developer",
   description:
-    "About Muhammad Jawwad Raza — a Remote Next.js, React & Cloudflare Workers developer with 1.5+ years of experience. Specializing in scalable web apps and AI automation for global clients.",
+    "About Muhammad Jawwad Raza - a Remote Next.js, React & Cloudflare Workers developer with 1.5+ years of experience. Specializing in scalable web apps and AI automation for global clients.",
   keywords: [
     "Muhammad Jawwad Raza",
     "About MERN Developer",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       "Remote Next.js, React & Cloudflare developer with 1.5+ years of experience building scalable web apps and AI automation solutions.",
     url: "https://mjawwadraza.com/about",
     siteName: "MJR Portfolio",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Muhammad Jawwad Raza — Developer" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Muhammad Jawwad Raza - Developer" }],
     type: "profile",
   },
 }

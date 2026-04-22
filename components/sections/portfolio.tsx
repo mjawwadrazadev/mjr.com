@@ -111,7 +111,7 @@ const projects = [
     title: "Opportunist",
     subtitle: "Global Career Intelligence & Discovery Engine",
     description:
-      "A sophisticated professional ecosystem designed to unify disparate global opportunities—ranging from internships and volunteer roles to technical competitions—into a single actionable feed. It features a personalized impact dashboard with real-time analytics to help users track their growth and professional milestones.",
+      "A sophisticated professional ecosystem designed to unify disparate global opportunities, ranging from internships and volunteer roles to technical competitions, into a single actionable feed. It features a personalized impact dashboard with real-time analytics to help users track their growth and professional milestones.",
     image: "/images/opportunist.png",
     link: "https://opportunist.app/",
     tech: [
