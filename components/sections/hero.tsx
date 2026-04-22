@@ -152,7 +152,7 @@ export function HeroSection() {
               <span className="text-foreground font-semibold">
                 Muhammad Jawwad Raza
               </span>
-              . A MERN Stack Developer with 1.5+ years of experience crafting
+              . A MERN Stack Developer with 2+ years of experience crafting
               performant, scalable, and user-centric web applications.
             </motion.p>
 
@@ -200,6 +200,9 @@ export function HeroSection() {
                 "MongoDB",
                 "Express.js",
                 "TypeScript",
+                "Socket.io",
+                "Payment Gateways",
+
               ].map((tech) => (
                 <motion.span
                   key={tech}
