@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     "Full Stack Developer Case Study",
   ],
   alternates: {
-    canonical: "https://mjawwadraza.com/",
+    canonical: "https://mjawwadraza.com/portfolio",
   },
   openGraph: {
     title: "Projects Portfolio | Muhammad Jawwad Raza",

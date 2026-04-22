@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Web Development Inquiry",
   ],
   alternates: {
-    canonical: "https://mjawwadraza.com/",
+    canonical: "https://mjawwadraza.com/contact",
   },
   openGraph: {
     title: "Contact & Book a Meeting | Muhammad Jawwad Raza",

@@ -56,9 +56,6 @@ export const metadata: Metadata = {
     creator: "@mjawwadraza",
     images: ["/og-image.jpg"],
   },
-  alternates: {
-    canonical: "https://mjawwadraza.com/",
-  },
 }
 
 export const viewport: Viewport = {

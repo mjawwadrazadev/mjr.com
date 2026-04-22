@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Full Stack Developer Pakistan",
   ],
   alternates: {
-    canonical: "https://mjawwadraza.com/",
+    canonical: "https://mjawwadraza.com/about",
   },
   openGraph: {
     title: "About Muhammad Jawwad Raza | Next.js & Cloudflare Developer",

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Freelance Developer Pakistan",
   ],
   alternates: {
-    canonical: "https://mjawwadraza.com/",
+    canonical: "https://mjawwadraza.com/resume",
   },
   openGraph: {
     title: "Resume | Hire Muhammad Jawwad Raza",
