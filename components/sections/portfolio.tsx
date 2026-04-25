@@ -121,7 +121,20 @@ const projects = [
       "Verified evidence generation",
     ],
   },
-
+  {
+    title: "PITCHERS",
+    subtitle: "AI-Powered Professional Networking & Job Ecosystem",
+    description:
+      "A comprehensive MERN stack platform designed for startup founders and professional talent. Features AI-integrated skill validation through strategic gaming (Chess), real-time job matching, and a high-performance networking engine.",
+    image: "/images/Pitchers.png",
+    link: "https://pitchers.ai/",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Redis", "Stockfish AI", "Framer Motion"],
+    highlights: [
+      "AI-validated skill matching system",
+      "Strategic networking through interactive Chess",
+      "Real-time startup discovery & talent pipeline",
+    ],
+  },
   {
     title: "Opportunist",
     subtitle: "Global Career Intelligence & Discovery Engine",
