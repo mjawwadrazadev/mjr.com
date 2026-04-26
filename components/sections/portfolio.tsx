@@ -127,7 +127,7 @@ const projects = [
     description:
       "A comprehensive MERN stack platform designed for startup founders and professional talent. Features AI-integrated skill validation through strategic gaming (Chess), real-time job matching, and a high-performance networking engine.",
     image: "/images/Pitchers.png",
-    link: "https://pitchers.ai/",
+    link: "https://pitchdin.com/",
     tech: ["React", "Node.js", "Express", "MongoDB", "Redis", "Stockfish AI", "Framer Motion"],
     highlights: [
       "AI-validated skill matching system",
