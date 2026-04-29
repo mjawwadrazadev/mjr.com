@@ -40,7 +40,7 @@ const projects = [
     subtitle: "Creator Collaboration Platform",
     description:
       "A social platform designed for content creators to connect, collaborate, and grow together. Built with SSR for optimal SEO and performance.",
-    image: "/images/tangle social.png",
+    image: "/images/tangle-social.png",
     link: "https://tanglesocial.app/",
     tech: ["Nuxt.js", "SSR", "MongoDB", "Socket.io", "Express.js", "Tailwind CSS"],
     highlights: [
