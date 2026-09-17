@@ -10,51 +10,57 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mjawwadraza.com/"),
-  title: "Muhammad Jawwad Raza | MERN Stack Developer",
+  title: {
+    default: "Muhammad Jawwad Raza | Full-Stack MERN & Next.js Developer",
+    template: "%s | Muhammad Jawwad Raza",
+  },
   description:
-    "Remote MERN Stack Developer with 1.5+ years of experience building scalable full-stack web applications for clients worldwide. Specializing in React, Next.js, and Node.js.",
+    "Full-Stack MERN & Next.js Developer specializing in scalable web applications, B2B SaaS platforms, and AI integrations. Available for remote engineering roles & contract projects.",
   keywords: [
     "Muhammad Jawwad Raza",
+    "Full Stack MERN Developer",
+    "Next.js SaaS Engineer",
+    "Hire React Node.js Developer",
+    "AI Agent Integration Specialist",
+    "Cloudflare Workers Developer",
+    "Remote Web Developer Pakistan",
     "MERN Stack Developer",
-    "Full Stack Developer",
-    "AI Automation Developer",
-    "AI Agent Development",
-    "Remote React Developer",
-    "Remote Next.js Developer",
     "Freelance Web Developer",
-    "High Performance Web Applications",
     "Software Engineer Portfolio",
-    "Tailwind CSS Expert",
-    "Bespoke SaaS Development",
-    "Hiring MERN Developer",
-    "Enterprise Software Development",
-    "Workflow Automation",
-    "n8n Automation Expert",
   ],
   authors: [{ name: "Muhammad Jawwad Raza", url: "https://mjawwadraza.com/" }],
   creator: "Muhammad Jawwad Raza",
+  alternates: {
+    canonical: "https://mjawwadraza.com/",
+  },
   openGraph: {
-    title: "Muhammad Jawwad Raza | MERN Stack Developer",
-    description: "Building Scalable Full-Stack Web Applications with MERN",
+    title: "Muhammad Jawwad Raza | Full-Stack MERN & Next.js Developer",
+    description:
+      "Full-Stack MERN & Next.js Developer specializing in scalable web applications, B2B SaaS platforms, and AI integrations.",
     type: "website",
     locale: "en_US",
     url: "https://mjawwadraza.com/",
-    siteName: "MJR Portfolio",
+    siteName: "Muhammad Jawwad Raza Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://mjawwadraza.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Muhammad Jawwad Raza - MERN Stack Developer",
+        alt: "Muhammad Jawwad Raza - MERN Stack & Next.js Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Jawwad Raza | MERN Stack Developer",
-    description: "Building Scalable Full-Stack Web Applications with MERN",
+    title: "Muhammad Jawwad Raza | Full-Stack MERN & Next.js Developer",
+    description:
+      "Full-Stack MERN & Next.js Developer specializing in scalable web applications, B2B SaaS platforms, and AI integrations.",
     creator: "@mjawwadraza",
-    images: ["/og-image.jpg"],
+    images: ["https://mjawwadraza.com/og-image.jpg"],
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
   },
 }
 
@@ -78,6 +84,103 @@ export default function RootLayout({
             __html: `if(typeof globalThis.__name==='undefined'){globalThis.__name=(f)=>f;}`
           }}
         />
+        {/* Multi-Entity JSON-LD Structured Data for GEO/AEO */}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfilePage",
+                "@id": "https://mjawwadraza.com/#profilepage",
+                "url": "https://mjawwadraza.com/",
+                "name": "Muhammad Jawwad Raza - MERN Stack & Next.js Developer Portfolio",
+                "mainEntity": {
+                  "@id": "https://mjawwadraza.com/#person"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "@id": "https://mjawwadraza.com/#person",
+                "name": "Muhammad Jawwad Raza",
+                "alternateName": ["Jawwad Raza", "MJR"],
+                "jobTitle": "Full-Stack MERN & Next.js Engineer",
+                "description": "Full-Stack Developer with 2+ years of experience specializing in React, Next.js, Node.js, Express, MongoDB, Cloudflare Workers, and AI Agent integrations.",
+                "url": "https://mjawwadraza.com/",
+                "image": "https://mjawwadraza.com/og-image.jpg",
+                "email": "mjawwadraza.dev@gmail.com",
+                "telephone": "+923073450411",
+                "nationality": "Pakistani",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "xdstudios.io"
+                },
+                "alumniOf": {
+                  "@type": "EducationalOrganization",
+                  "name": "University of Sahiwal",
+                  "sameAs": "https://uosahiwal.edu.pk/"
+                },
+                "sameAs": [
+                  "https://github.com/mjawwadraza",
+                  "https://www.linkedin.com/in/muhammad-jawwad-raza-77444b242",
+                  "https://instagram.com/mjawwad_raza",
+                  "https://cal.com/muhammad-jawwad-raza"
+                ],
+                "knowsAbout": [
+                  "JavaScript",
+                  "TypeScript",
+                  "React.js",
+                  "Next.js",
+                  "Node.js",
+                  "Express.js",
+                  "MongoDB",
+                  "Cloudflare Workers",
+                  "RESTful APIs",
+                  "AI Automation",
+                  "n8n",
+                  "Puppeteer Web Automation",
+                  "Tailwind CSS"
+                ],
+                "knowsLanguage": ["English", "Urdu"],
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Software Engineering Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Full-Stack MERN & Next.js Web Development",
+                        "description": "Custom B2B SaaS, e-commerce, and high-performance marketplace web application development."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI Integration & Automation Engineering",
+                        "description": "Integrating LLMs, OpenAI APIs, Puppeteer browser automation, and n8n workflows into web applications."
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://mjawwadraza.com/#website",
+                "url": "https://mjawwadraza.com/",
+                "name": "Muhammad Jawwad Raza Portfolio",
+                "publisher": {
+                  "@id": "https://mjawwadraza.com/#person"
+                }
+              }
+            ])
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased text-foreground selection:bg-primary/30`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
@@ -85,54 +188,6 @@ export default function RootLayout({
           <div className="overflow-x-hidden min-h-screen">
             {children}
           </div>
-          {/* JSON-LD Structured Data */}
-          <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
-            {JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Muhammad Jawwad Raza",
-                "jobTitle": "MERN Stack & AI Automation Developer",
-                "url": "https://mjawwadraza.com/",
-                "image": "https://mjawwadraza.com/og-image.jpg",
-                "email": "mjawwadraza@gmail.com",
-                "sameAs": [
-                  "https://github.com/mjawwadraza",
-                  "https://linkedin.com/in/mjawwadraza",
-                  "https://instagram.com/mjawwad_raza",
-                  "https://cal.com/muhammad-jawwad-raza"
-                ],
-                "description": "Remote MERN Stack & AI Automation Developer with 1.5+ years of experience building scalable full-stack web applications and intelligent automation solutions for clients worldwide.",
-                "knowsAbout": [
-                  "React.js",
-                  "Next.js",
-                  "Node.js",
-                  "MongoDB",
-                  "TypeScript",
-                  "AI Automation",
-                  "n8n",
-                  "Full Stack Development",
-                  "Remote Collaboration"
-                ],
-                "knowsLanguage": ["English", "Urdu"],
-                "alumniOf": {
-                  "@type": "EducationalOrganization",
-                  "name": "Top Ranking CS University"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "Muhammad Jawwad Raza | Portfolio",
-                "url": "https://mjawwadraza.com/",
-                "author": {
-                  "@type": "Person",
-                  "name": "Muhammad Jawwad Raza"
-                },
-                "description": "Portfolio of Muhammad Jawwad Raza - MERN Stack & AI Automation Developer."
-              }
-            ])}
-          </Script>
         </ThemeProvider>
       </body>
     </html>

@@ -101,7 +101,7 @@ export function AboutSection() {
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               With{" "}
               <span className="text-foreground font-semibold">
-                1.5+ years of professional experience
+                2+ years of professional experience
               </span>
               , I specialize in building full-stack web applications using the
               MERN stack. My focus is on creating scalable, performant, and

@@ -126,8 +126,11 @@ export function HeroSection() {
               animate="visible"
               variants={fadeUpVariants}
             >
-              <span className="text-balance block">Building</span>
-              <span className="text-primary light-gradient-text-primary block w-fit mx-auto lg:mx-0 mt-[2px] sm:mt-1 md:mt-2 min-h-[1.1em]">
+              <span className="sr-only">
+                Muhammad Jawwad Raza - Full Stack MERN Developer, Next.js &amp; AI Integration Engineer
+              </span>
+              <span aria-hidden="true" className="text-balance block">Building</span>
+              <span aria-hidden="true" className="text-primary light-gradient-text-primary block w-fit mx-auto lg:mx-0 mt-[2px] sm:mt-1 md:mt-2 min-h-[1.1em]">
                 <Typewriter strings={[
                   "Scalable Web Apps",
                   "AI-Powered Apps",
@@ -138,7 +141,7 @@ export function HeroSection() {
                   "Robust REST APIs"
                 ]} />
               </span>
-              <span className="text-balance block mt-[2px] sm:mt-1 md:mt-2">with MERN</span>
+              <span aria-hidden="true" className="text-balance block mt-[2px] sm:mt-1 md:mt-2">with MERN</span>
             </motion.h1>
 
             <motion.p
@@ -236,7 +239,7 @@ export function HeroSection() {
                 {/* Inner container */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-secondary/50 backdrop-blur-sm border border-border">
                   <Image
-                    src="/images/porfolio image.jpeg"
+                    src="/images/portfolio-image.jpeg"
                     alt="Muhammad Jawwad Raza – MERN Stack Developer"
                     fill
                     sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, (max-width: 1024px) 288px, (max-width: 1280px) 320px, 384px"
