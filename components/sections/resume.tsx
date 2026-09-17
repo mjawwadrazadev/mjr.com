@@ -65,7 +65,7 @@ const languages = [
 
 export function ResumeSection() {
   return (
-    <section id="resume" className="py-16 sm:py-20 md:py-24 bg-card/30">
+    <section id="resume" className="py-16 sm:py-20 md:py-24 bg-card/30 dark:bg-black">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn className="text-center mb-6 sm:mb-10 lg:mb-16">

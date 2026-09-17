@@ -7,6 +7,8 @@ import Image from "next/image"
 import { Typewriter } from "@/components/typewriter"
 import { Zen_Dots, JetBrains_Mono } from "next/font/google"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion-wrapper"
+import { ParticlesBackground } from "@/components/particles-background"
+import { FloatingShapes } from "@/components/floating-shapes"
 
 const zenDots = Zen_Dots({
   weight: '400',
@@ -90,18 +92,16 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-background text-foreground dark:bg-black dark:text-white"
     >
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      {/* Constellation Particles Background (CodingForge Style) */}
+      <ParticlesBackground />
 
-      {/* Glow Effect */}
-      <motion.div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-primary/20 rounded-full blur-[128px] pointer-events-none"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      />
+      {/* 3D Floating Frosted Glass Shapes */}
+      <FloatingShapes />
+
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none opacity-40 dark:opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -228,13 +228,10 @@ export function HeroSection() {
               className="relative"
               animate={floatingAnimation}
             >
-              {/* Glow behind image */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-primary/20 to-transparent rounded-2xl blur-2xl" />
-
-              {/* Image container with border glow */}
+              {/* Image container */}
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
                 {/* Gradient border ring */}
-                <div className="absolute -inset-1 bg-gradient-to-br from-primary via-primary/50 to-primary/20 rounded-2xl opacity-60" />
+                <div className="absolute -inset-1 bg-gradient-to-br from-primary via-primary/50 to-primary/20 rounded-2xl opacity-70" />
 
                 {/* Inner container */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-secondary/50 backdrop-blur-sm border border-border">
